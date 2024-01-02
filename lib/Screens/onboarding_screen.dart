@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/login_screen.dart';
 
 import '../Shared component/page_indicator.dart';
@@ -70,10 +71,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             return child;
                           }
                         else{
-                          return const SizedBox(
-                            height: 100,
-                            width: 100,
-                            child: Center(
+                          return  SizedBox(
+                            height: 100.h,
+                            width: 100.w,
+                            child: const Center(
                               child: CircularProgressIndicator(color: Colors.orange,),
                             ),
                           );
@@ -122,7 +123,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                          Text(onboardingText[3],
                              style: Theme.of(context).textTheme.bodyLarge
                          ),
-                         const SizedBox(height: 50,),
+                          SizedBox(height: 50.h,),
                          Container(
                            margin: const EdgeInsets.only(left: 30,right: 30),
                            child: MaterialButton(
@@ -134,10 +135,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                              shape: RoundedRectangleBorder(
                                  borderRadius: BorderRadius.circular(40)
                              ),
-                             height: 60,
+                             height: 60.h,
                              minWidth: double.infinity,
-                             child:  const Text("Get Started",
-                                 style:TextStyle(color: Colors.white38,fontSize: 40)
+                             child:   Text("Get Started",
+                                 style:TextStyle(color: Colors.white38,fontSize: 40.sp)
                              ),
                            ),
                          ),
@@ -163,20 +164,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       controller.jumpToPage(3);
 
                     });
-                  }, child: const Text("Skip",style: TextStyle(
-                      color: Color.fromRGBO(255, 187, 59, 1),
-                      fontSize: 25
+                  }, child:  Text("Skip",style: TextStyle(
+                      color: const Color.fromRGBO(255, 187, 59, 1),
+                      fontSize: 25.sp
                   ),)),
                   Row(
                     children: [
                       Indicator(currentPosition: 0,currentIndex:currentIndex),
-                      const SizedBox(width: 5,),
+                       SizedBox(width: 5.w,),
                       Indicator(currentPosition: 1,currentIndex:currentIndex),
-                      const SizedBox(width: 5,),
+                       SizedBox(width: 5.w,),
                       Indicator(currentPosition: 2,currentIndex:currentIndex),
-                      const SizedBox(width: 5,),
+                       SizedBox(width: 5.w,),
                       Indicator(currentPosition: 3,currentIndex:currentIndex),
-                      const SizedBox(width: 20,),
+                       SizedBox(width: 20.w,),
                     ],
                   ),
                   TextButton(onPressed: (){
@@ -186,9 +187,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                          curve: Curves.easeIn);
 
                    });
-                  }, child: const Text("Next",style: TextStyle(
-                    color: Color.fromRGBO(255, 187, 59, 1),
-                    fontSize: 25
+                  }, child:  Text("Next",style: TextStyle(
+                    color: const Color.fromRGBO(255, 187, 59, 1),
+                    fontSize: 25.sp
                   ),)),
                 ],
               ),

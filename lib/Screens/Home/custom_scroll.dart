@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/home_builder.dart';
 
 class CustomScroll extends StatelessWidget {
@@ -18,12 +19,12 @@ class CustomScroll extends StatelessWidget {
                 Navigator.pop(context);
               },
                   icon: const Icon(Icons.arrow_back,size: 30,)),
-              const SizedBox(width: 25,),
+               SizedBox(width: 25.w,),
               Text(
                 title,
-                style: const TextStyle(
+                style:  TextStyle(
                     color: Colors.grey,
-                    fontSize: 30,
+                    fontSize: 28.sp,
                     fontWeight: FontWeight.normal,
                     decoration: TextDecoration.none
                 ),

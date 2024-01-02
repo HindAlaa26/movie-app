@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/custom_scroll.dart';
 import 'home_builder.dart';
 
@@ -43,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
                        children: [
                          Text(
                            categories[bigIndex],
-                           style: const TextStyle(
-                               color: Colors.white, fontSize: 25),
+                           style:  TextStyle(
+                               color: Colors.white, fontSize: 23.sp),
                          ),
                          IconButton(
                            onPressed: () {
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                              );
                            },
-                           icon: const Icon(
+                           icon:  const Icon(
                              Icons.arrow_forward,
                              color: Colors.orange,
                              size: 30,
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                        ],
                      ),
                      SizedBox(
-                       height: 600,
+                       height: 560.h,
                        width: double.infinity,
                        child: ListView.builder(
                          shrinkWrap: true,
@@ -95,11 +96,11 @@ class _HomeScreenState extends State<HomeScreen> {
                  ),
                );
              },
-             separatorBuilder: (context, index) => const SizedBox(height: 20),
+             separatorBuilder: (context, index) =>  SizedBox(height: 18.h),
              itemCount: 4),
 
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: 25.h,
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatefulWidget {
 
@@ -33,7 +34,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               return "${widget.validatorText} must not be Empty";
             }
         },
-        style: const TextStyle(color: Colors.grey,fontSize: 20,letterSpacing: 2,shadows: [BoxShadow(blurRadius: 0,),],fontWeight: FontWeight.normal),
+        style:  TextStyle(color: Colors.grey,fontSize: 18.sp,letterSpacing: 2,shadows: const [BoxShadow(blurRadius: 0,),],fontWeight: FontWeight.normal),
         obscureText:widget.isPassword ,
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
@@ -48,16 +49,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
            });
          },icon: const Icon(Icons.visibility),) ): null,
          suffixIconColor: Colors.grey,
-         errorStyle: const TextStyle(
+         errorStyle:  TextStyle(
              color: Colors.grey,
-            fontSize: 12,
+            fontSize: 10.sp,
            fontWeight: FontWeight.normal
          ),
          errorBorder: OutlineInputBorder(borderSide: BorderSide(color:Colors.grey.shade700),borderRadius: BorderRadius.circular(40)) ,
           focusedErrorBorder:  OutlineInputBorder(borderSide: BorderSide(color:Colors.grey.shade700),borderRadius: BorderRadius.circular(40)),
 
           hintText: widget.hintText,
-          hintStyle:const TextStyle(color: Colors.grey,letterSpacing: 2,fontSize: 20) ,
+          hintStyle: TextStyle(color: Colors.grey,letterSpacing: 2,fontSize: 18.sp) ,
           border: OutlineInputBorder(borderSide: const BorderSide(color:Colors.grey),borderRadius: BorderRadius.circular(40)),
           fillColor: const Color.fromRGBO(36, 36, 38, 1.0),
           filled: true,

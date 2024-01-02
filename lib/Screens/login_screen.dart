@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -52,13 +53,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 50,),
-            const Text("Welcome Back!",style: TextStyle(
-              fontSize: 20,
+             SizedBox(height: 40.h,),
+             Text("Welcome Back!",style: TextStyle(
+              fontSize: 18.sp,
             ),),
-            const SizedBox(height: 20,),
-            const Text("Please sign in to your account\nto continue",style: TextStyle(
-              fontSize: 15,
+             SizedBox(height: 18.h,),
+             Text("Please sign in to your account\nto continue",style: TextStyle(
+              fontSize: 13.sp,
               color: Colors.grey,
 
             ),textAlign: TextAlign.center,),
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       prefixIcon: Icons.email_outlined,
                       isPassword: false,
                     ),
-                    const SizedBox(height: 20,),
+                     SizedBox(height: 18.h,),
                     CustomTextFormField(
                       keyboardType: TextInputType.visiblePassword,
                       controller: passwordController,
@@ -111,19 +112,19 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(10)
                         ),
                         padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
-                        child:  const Text("Sign in",
-                            style:TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.normal)
+                        child:   Text("Sign in",
+                            style:TextStyle(color: Colors.white,fontSize: 23.sp,fontWeight: FontWeight.w500)
                         ),
                       ),
                     ),
-                    const SizedBox(height: 50,),
+                     SizedBox(height: 48.h,),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Not registered yet?",style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 20)),
+                         Text("Not registered yet?",style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 18.sp)),
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context, Register.routeName);
-                        }, child:const Text(" Sign Up",style: TextStyle(color: Color.fromRGBO(255, 187, 59, 1),fontWeight: FontWeight.normal,fontSize: 20)))
+                        }, child: Text(" Sign Up",style: TextStyle(color: const Color.fromRGBO(255, 187, 59, 1),fontWeight: FontWeight.normal,fontSize: 18.sp)))
                       ],
                     ),
                   ],

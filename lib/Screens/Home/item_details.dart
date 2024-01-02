@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../models/home_model.dart';
 import '../../provider/favorite_provider.dart';
@@ -36,7 +37,7 @@ class ItemDetails extends StatelessWidget {
                 Navigator.pop(context);
               },
                   icon: const Icon(Icons.arrow_back,size: 30,)),
-              Expanded(child: Text("$title",style: const TextStyle(color: Colors.white,fontSize: 20,decoration: TextDecoration.none))),
+              Expanded(child: Text("$title",style:  TextStyle(color: Colors.white,fontSize: 18.sp,decoration: TextDecoration.none))),
             ],
           ),
         ),
@@ -44,7 +45,7 @@ class ItemDetails extends StatelessWidget {
             children: [
               Image(
                 image: NetworkImage("https://image.tmdb.org/t/p/original/$image"),
-                height: 370,
+                height: 375.h,
                 width: double.infinity,
                 fit: BoxFit.fill,
                 errorBuilder: (context, error, stackTrace) => const Icon(Icons.error,color: Colors.white),
@@ -52,11 +53,11 @@ class ItemDetails extends StatelessWidget {
                   if (loadingProgress == null) {
                     return child;
                   } else {
-                    return const Center(
+                    return  Center(
                       child: SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: CircularProgressIndicator(color: Colors.orange),
+                        height: 50.h,
+                        width: 50.w,
+                        child: const CircularProgressIndicator(color: Colors.orange),
                       ),
                     );
                   }
@@ -95,16 +96,16 @@ class ItemDetails extends StatelessWidget {
             padding: const EdgeInsets.only(top: 30,left: 15),
             child: Column(
               children: [
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Movie Name:",style:  TextStyle(color: Colors.orange,fontSize: 25,decoration: TextDecoration.none),),
+                    Text("Movie Name:",style:  TextStyle(color: Colors.orange,fontSize: 23.sp,decoration: TextDecoration.none),),
                   ],
                 ),
-                const SizedBox(height: 15,),
+                 SizedBox(height: 13.h,),
                 Row(
                   children: [
-                    Expanded(child: Text("$title",style: const TextStyle(color: Colors.white,fontSize: 25,decoration: TextDecoration.none))),
+                    Expanded(child: Text("$title",style:  TextStyle(color: Colors.white,fontSize: 23.sp,decoration: TextDecoration.none))),
                   ],
                 ),
               ],
@@ -115,8 +116,8 @@ class ItemDetails extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10,left: 15),
             child: Row(
               children: [
-                const Text("Release Date: ",style:  TextStyle(color: Colors.orange,fontSize: 25,decoration: TextDecoration.none),),
-                Text("$releaseDate",style: const TextStyle(color: Colors.grey,fontSize: 20,decoration: TextDecoration.none)),
+                 Text("Release Date: ",style:  TextStyle(color: Colors.orange,fontSize: 23.sp,decoration: TextDecoration.none),),
+                Text("$releaseDate",style:  TextStyle(color: Colors.grey,fontSize: 18.sp,decoration: TextDecoration.none)),
               ],
             ),
           ),
@@ -125,14 +126,14 @@ class ItemDetails extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10,left: 15,right: 5),
             child: Column(
               children: [
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("Overview",style:  TextStyle(color: Colors.orange,fontSize: 25,decoration: TextDecoration.none),),
+                    Text("Overview",style:  TextStyle(color: Colors.orange,fontSize: 23.sp,decoration: TextDecoration.none),),
                   ],
                 ),
-                const SizedBox(height: 15,),
-                Text("$overview",style:  TextStyle(color: Colors.grey[350],fontSize: 20,decoration: TextDecoration.none)),
+                 SizedBox(height: 13.h,),
+                Text("$overview",style:  TextStyle(color: Colors.grey[350],fontSize: 18.sp,decoration: TextDecoration.none)),
               ],
             ),
           ),
@@ -141,13 +142,13 @@ class ItemDetails extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20,left: 15,bottom: 20),
             child: Row(
               children: [
-                const Text("Vote Average: ",style:  TextStyle(color: Colors.orange,fontSize: 25,decoration: TextDecoration.none),),
+                 Text("Vote Average: ",style:  TextStyle(color: Colors.orange,fontSize: 23.sp,decoration: TextDecoration.none),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Icon(Icons.star, color: Colors.yellow, size: 30),
-                    const SizedBox(width: 10),
-                    Text("$voteAverage", style: const TextStyle(fontSize: 20,color: Colors.white,decoration: TextDecoration.none)),
+                     SizedBox(width: 10.w),
+                    Text("$voteAverage", style:  TextStyle(fontSize: 18.sp,color: Colors.white,decoration: TextDecoration.none)),
                   ],
                 ),
               ],

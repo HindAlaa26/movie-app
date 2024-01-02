@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/onboarding_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -15,14 +16,14 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage("assets/images/logo.png"),height: 200,),
-            const SizedBox(height: 150,),
+             Image(image: const AssetImage("assets/images/logo.png"),height: 200.h,),
+             SizedBox(height: 150.h,),
             TextButton(
               onPressed: (){
                 Navigator.pushNamed(context, OnboardingScreen.routeName);
               },
-              child:  const Text("Let's Start",
-                  style: TextStyle(color: Color.fromRGBO(255, 187, 59, 50),fontSize: 30,
+              child:   Text("Let's Start",
+                  style: TextStyle(color: const Color.fromRGBO(255, 187, 59, 50),fontSize: 30.sp,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'MochiyPopOne'
                   )),

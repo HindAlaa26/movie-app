@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/home_layout.dart';
 import 'package:movie_app/Screens/Home/Home.dart';
 import 'package:movie_app/Screens/login_screen.dart';
@@ -36,34 +37,38 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(
+      context,
+      designSize: const Size(390, 812), // Provide your design size
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode:ThemeMode.light,
       theme: ThemeData(
         textTheme:ThemeData.light().textTheme.copyWith(
           // onboarding screen text
-          bodyLarge:const TextStyle(
-            fontSize: 35,
+          bodyLarge: TextStyle(
+            fontSize: 30.sp,
             fontWeight: FontWeight.bold,
             wordSpacing: 4,
-            shadows:[ BoxShadow(blurRadius: 8,color: Colors.grey)],
+            shadows:const [ BoxShadow(blurRadius: 8,color: Colors.grey)],
             fontFamily: 'MochiyPopOne',
           ),
           // login screen text
           //movie
-          bodyMedium:const TextStyle(
-            fontSize: 35,
+          bodyMedium: TextStyle(
+            fontSize: 30.sp,
             fontWeight: FontWeight.bold,
             wordSpacing: 4,
             color: Colors.white,
             fontFamily: 'MochiyPopOne',
           ),
           //club
-          bodySmall: const TextStyle(
-            fontSize: 35,
+          bodySmall:  TextStyle(
+            fontSize: 30.sp,
             fontWeight: FontWeight.bold,
             wordSpacing: 4,
-            color: Color.fromRGBO(255, 187, 59, 1),
+            color: const Color.fromRGBO(255, 187, 59, 1),
             fontFamily: 'MochiyPopOne',
           ),
 

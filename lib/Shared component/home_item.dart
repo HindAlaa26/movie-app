@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/item_details.dart';
 import 'package:movie_app/models/home_model.dart';
 
@@ -16,8 +17,8 @@ class _HomeItemState extends State<HomeItem> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 600,
-      width: 1000,
+      height: 600.h,
+      width: 1000.w,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
@@ -39,8 +40,8 @@ class _HomeItemState extends State<HomeItem> {
                 );
               },
               child: SizedBox(
-                height: 520,
-                width: 360,
+                height: 500.h,
+                width: 360.w,
                 child: Container(
                   decoration: BoxDecoration(
                     boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey.shade700)],
@@ -58,7 +59,7 @@ class _HomeItemState extends State<HomeItem> {
                             borderRadius: BorderRadius.circular(5),
                             child: Image(
                               image: NetworkImage("https://image.tmdb.org/t/p/original/${widget.homeModels[index].posterPath}"),
-                              height: 370,
+                              height: 340.h,
                               width: double.infinity,
                               fit: BoxFit.fill,
                               errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
@@ -66,11 +67,11 @@ class _HomeItemState extends State<HomeItem> {
                                 if (loadingProgress == null) {
                                   return child;
                                 } else {
-                                  return const Center(
+                                  return  Center(
                                     child: SizedBox(
-                                      height: 50,
-                                      width: 50,
-                                      child: CircularProgressIndicator(color: Colors.orange),
+                                      height: 50.h,
+                                      width: 50.w,
+                                      child: const CircularProgressIndicator(color: Colors.orange),
                                     ),
                                   );
                                 }
@@ -81,21 +82,21 @@ class _HomeItemState extends State<HomeItem> {
 
                         ],
                       ),
-                      const SizedBox(height: 15),
+                       SizedBox(height: 10.h),
                       Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Icon(Icons.star, color: Colors.yellow, size: 30),
-                              const SizedBox(width: 10),
-                              Text("${widget.homeModels[index].voteAverage }"?? "movie rate", style: const TextStyle(fontSize: 20,decoration: TextDecoration.none,color: Colors.white)),
+                               SizedBox(width: 10.w),
+                              Text("${widget.homeModels[index].voteAverage }", style:  TextStyle(fontSize: 18.sp,decoration: TextDecoration.none,color: Colors.white)),
                             ],
                           ),
-                          const SizedBox(height: 15),
-                          Text(widget.homeModels[index].title ?? "movie name", style: const TextStyle(fontSize: 20,decoration: TextDecoration.none,color: Colors.white),textAlign: TextAlign.center,),
-                          const SizedBox(height: 10),
-                          Text(widget.homeModels[index].releaseDate ?? "movie Date", style:   TextStyle(fontSize: 20,decoration: TextDecoration.none,color: Colors.grey[800])),
+                           SizedBox(height: 15.h),
+                          Text(widget.homeModels[index].title ?? "movie name", style:  TextStyle(fontSize: 18.sp,decoration: TextDecoration.none,color: Colors.white),textAlign: TextAlign.center,),
+                           SizedBox(height: 10.h),
+                          Text(widget.homeModels[index].releaseDate ?? "movie Date", style:   TextStyle(fontSize: 18.sp,decoration: TextDecoration.none,color: Colors.grey[800])),
                         ],
                       ),
                     ],
@@ -104,7 +105,7 @@ class _HomeItemState extends State<HomeItem> {
               ),
             );
           },
-          separatorBuilder: (context, index) => const SizedBox(height: 15,),
+          separatorBuilder: (context, index) =>  SizedBox(height: 13.h,),
           itemCount: widget.homeModels.length),
     );
   }

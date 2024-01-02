@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Shared%20component/home_item.dart';
 import 'package:movie_app/models/home_model.dart';
 import 'package:movie_app/movie_service/movie_service.dart';
@@ -32,16 +33,16 @@ class _HomeBuilderState extends State<HomeBuilder> {
             }
           else if(snapshot.hasError)
             {
-              return const SizedBox(
-                height: 400,
-                child: Text("Error when loading data"),
+              return  SizedBox(
+                height: 458.h,
+                child: const Text("Error when loading data"),
               );
             }
           else
           {
-            return const SizedBox(
-              height: 400,
-              child: Center(child: CircularProgressIndicator()),
+            return  SizedBox(
+              height: 458.h,
+              child: const Center(child: CircularProgressIndicator()),
             );
           }
         },);

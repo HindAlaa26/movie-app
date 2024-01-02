@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/Home.dart';
 import 'package:movie_app/Screens/favorite.dart';
 import 'package:movie_app/Shared%20component/home_drawer.dart';
@@ -15,7 +16,7 @@ class _HomeLayoutState extends State<HomeLayout> {
 
 List<Widget> screens = [
   HomeScreen(),
-  Favorite()
+  const Favorite()
 ];
 int currentIndex = 0;
   @override
@@ -29,12 +30,12 @@ int currentIndex = 0;
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Moive",style: Theme.of(context).textTheme.bodyMedium,),
-            const SizedBox(width: 5,),
-            const Text("Club",style: TextStyle(
-              fontSize: 30,
+             SizedBox(width: 5.w,),
+             Text("Club",style: TextStyle(
+              fontSize: 28.sp,
               fontWeight: FontWeight.bold,
               wordSpacing: 5,
-              color: Color.fromRGBO(255, 187, 59, 1),
+              color: const Color.fromRGBO(255, 187, 59, 1),
               fontFamily: 'MochiyPopOne',
             ),),
           ],

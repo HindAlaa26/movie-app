@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../provider/favorite_provider.dart';
 import 'Home/item_details.dart';
@@ -17,9 +18,9 @@ class _FavoriteState extends State<Favorite> {
   Widget build(BuildContext context) {
     return Consumer<FavoriteProvider>(builder: (context, value, child) {
       return
-        value.favoriteItems.isEmpty ? const Center(child: Text(
+        value.favoriteItems.isEmpty ?  Center(child: Text(
           "There are no favorite movie yet !",
-          style: TextStyle(color: Colors.orange, fontSize: 20),)) :
+          style: TextStyle(color: Colors.orange, fontSize: 18.sp),)) :
         ListView.separated(
             itemBuilder: (context, index) {
               return GestureDetector(
@@ -41,8 +42,8 @@ class _FavoriteState extends State<Favorite> {
                   );
                 },
                 child: SizedBox(
-                  height: 580,
-                  width: 200,
+                  height: 550.h,
+                  width: 200.w,
                   child: Container(
                     decoration: BoxDecoration(
                       boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey
@@ -64,7 +65,7 @@ class _FavoriteState extends State<Favorite> {
                                 image: NetworkImage(
                                     "https://image.tmdb.org/t/p/original/${value
                                         .favoriteItems[index].posterPath}"),
-                                height: 380,
+                                height: 355.h,
                                 width: double.infinity,
                                 fit: BoxFit.fill,
                                 errorBuilder: (context, error,
@@ -74,11 +75,11 @@ class _FavoriteState extends State<Favorite> {
                                   if (loadingProgress == null) {
                                     return child;
                                   } else {
-                                    return const Center(
+                                    return  Center(
                                       child: SizedBox(
-                                        height: 50,
-                                        width: 50,
-                                        child: CircularProgressIndicator(
+                                        height: 50.h,
+                                        width: 50.w,
+                                        child: const CircularProgressIndicator(
                                             color: Colors.orange),
                                       ),
                                     );
@@ -112,7 +113,7 @@ class _FavoriteState extends State<Favorite> {
                             )
                           ],
                         ),
-                        const SizedBox(height: 15),
+                         SizedBox(height: 15.h),
                         Column(
                           children: [
                             Row(
@@ -120,24 +121,24 @@ class _FavoriteState extends State<Favorite> {
                               children: [
                                 const Icon(
                                     Icons.star, color: Colors.yellow, size: 30),
-                                const SizedBox(width: 10),
+                                 SizedBox(width: 10.w),
                                 Text("${value.favoriteItems[index]
                                     .voteAverage}" ?? "movie rate",
-                                    style: const TextStyle(fontSize: 20,
+                                    style:  TextStyle(fontSize: 18.sp,
                                         decoration: TextDecoration.none,
                                         color: Colors.white)),
                               ],
                             ),
-                            const SizedBox(height: 10),
+                             SizedBox(height: 10.h),
                             Text(value.favoriteItems[index].title ??
-                                "movie name", style: const TextStyle(
-                                fontSize: 17,
+                                "movie name", style:  TextStyle(
+                                fontSize: 17.sp,
                                 decoration: TextDecoration.none,
                                 color: Colors.white)),
-                            const SizedBox(height: 8),
+                             SizedBox(height: 8.h),
                             Text(value.favoriteItems[index].releaseDate ??
-                                "movie Date", style: const TextStyle(
-                                fontSize: 20,
+                                "movie Date", style:  TextStyle(
+                                fontSize: 20.sp,
                                 decoration: TextDecoration.none,
                                 color: Colors.white)),
                           ],
@@ -148,7 +149,7 @@ class _FavoriteState extends State<Favorite> {
                 ),
               );
             },
-            separatorBuilder: (context, index) => const SizedBox(height: 5,),
+            separatorBuilder: (context, index) =>  SizedBox(height: 5.h,),
             itemCount: value.favoriteItems.length);
     },);
   }

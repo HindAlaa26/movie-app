@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/login_screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,7 +38,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         child: Column(
           children: [
             Image(image: const NetworkImage("https://img.freepik.com/free-photo/3d-rat-watching-movie-cinema_23-2151024865.jpg?size=626&ext=jpg&ga=GA1.1.2114304355.1700854564&semt=sph",),
-           height: 350,
+           height: 343.h,
            width: double.infinity,
            fit: BoxFit.fill,
                errorBuilder: (context, error, stackTrace) =>  const Icon(Icons.error),
@@ -47,10 +48,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
                    return child;
                  }
                  else{
-                   return const SizedBox(
-                     height: 100,
-                     width: 100,
-                     child: Center(
+                   return  SizedBox(
+                     height: 100.h,
+                     width: 100.w,
+                     child: const Center(
                        child: CircularProgressIndicator(color: Colors.orange,),
                      ),
                    );
@@ -64,18 +65,18 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       Navigator.push(context,MaterialPageRoute(builder: (context) =>  CustomScroll(title: categories[index],)));
                     },
                     child: Container(
-                      margin: const EdgeInsets.all(20),
+                      margin: const EdgeInsets.all(15),
                       padding: const EdgeInsets.all(15),
                       color: Colors.grey[800],
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(categories[index],style: const TextStyle(color: Colors.white,fontSize: 20),),
+                          Text(categories[index],style:  TextStyle(color: Colors.white,fontSize: 18.sp),),
                         ],
                       ),
                     ),
                   ),
-                  separatorBuilder: (context, index) => const SizedBox(height: 5),
+                  separatorBuilder: (context, index) =>  SizedBox(height: 5.h),
                   itemCount: categories.length),
             ),
 
@@ -83,14 +84,14 @@ class _HomeDrawerState extends State<HomeDrawer> {
               padding: const EdgeInsets.only(left: 60),
               child: ListTile(
                 leading: const Icon( Icons.logout_outlined,color: Colors.grey,size: 30),
-                title: const Text("Logout",style: TextStyle(color: Colors.grey,fontSize: 20,fontWeight: FontWeight.normal)),
+                title:  Text("Logout",style: TextStyle(color: Colors.grey,fontSize: 20.sp,fontWeight: FontWeight.normal)),
                 onTap: (){
                   removeData();
                   Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
                 },
               ),
             ),
-            const SizedBox(height: 20,),
+             SizedBox(height: 18.h,),
           ],
         ),
       ),
