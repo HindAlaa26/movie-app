@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:movie_app/Screens/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Shared component/customTextFormField.dart';
-import '../HomeLayout/home_layout.dart';
+import 'Home/home_layout.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = 'login screen';

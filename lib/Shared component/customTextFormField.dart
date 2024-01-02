@@ -49,7 +49,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
          },icon: const Icon(Icons.visibility),) ): null,
          suffixIconColor: Colors.grey,
          errorStyle: const TextStyle(
-             color: Colors.grey
+             color: Colors.grey,
+            fontSize: 12,
+           fontWeight: FontWeight.normal
          ),
          errorBorder: OutlineInputBorder(borderSide: BorderSide(color:Colors.grey.shade700),borderRadius: BorderRadius.circular(40)) ,
           focusedErrorBorder:  OutlineInputBorder(borderSide: BorderSide(color:Colors.grey.shade700),borderRadius: BorderRadius.circular(40)),

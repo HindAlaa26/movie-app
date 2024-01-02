@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/Screens/Home/Home.dart';
 import 'package:movie_app/Shared%20component/home_item.dart';
 import 'package:movie_app/models/home_model.dart';
 import 'package:movie_app/movie_service/movie_service.dart';
@@ -14,7 +13,7 @@ class HomeBuilder extends StatefulWidget {
 
 class _HomeBuilderState extends State<HomeBuilder> {
    var movieFuture;
-   bool isFavorite = false;
+
   @override
   void initState() {
     // TODO: implement initState

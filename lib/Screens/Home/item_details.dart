@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../models/home_model.dart';
-import '../../providers/favorite_provider.dart';
+import '../../provider/favorite_provider.dart';
 
 class ItemDetails extends StatelessWidget {
   final String? title;

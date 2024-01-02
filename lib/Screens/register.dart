@@ -137,10 +137,10 @@ class _RegisterState extends State<Register> {
                         Row(
                           children: [
                             const SizedBox(width: 20,),
-                            isCheckboxFalse ? Text("Please agree with our Privacy Policy",style:TextStyle(fontSize: 10,fontWeight:FontWeight.normal,color: Colors.grey[700],)):Text(""),
+                            isCheckboxFalse ? Text("Please agree with our Privacy Policy",style:TextStyle(fontSize: 15,fontWeight:FontWeight.normal,color: Colors.grey[700],)):const Text(""),
 
                         ],),
-                         const SizedBox(height: 6,),
+                         const SizedBox(height: 10,),
                         Padding(
                           padding: const EdgeInsets.only(left: 70,right: 70),
                           child: MaterialButton(

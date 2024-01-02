@@ -37,7 +37,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         child: Column(
           children: [
             Image(image: const NetworkImage("https://img.freepik.com/free-photo/3d-rat-watching-movie-cinema_23-2151024865.jpg?size=626&ext=jpg&ga=GA1.1.2114304355.1700854564&semt=sph",),
-           height: 300,
+           height: 350,
            width: double.infinity,
            fit: BoxFit.fill,
                errorBuilder: (context, error, stackTrace) =>  const Icon(Icons.error),
@@ -79,20 +79,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   itemCount: categories.length),
             ),
 
-             Row(
-               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-
-                const Text("Light",style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.normal)),
-                const SizedBox(width: 10,),
-                Switch(value: isSwitch, onChanged: (value){setState(() {
-                  isSwitch = !isSwitch;
-                });},inactiveThumbColor: Colors.grey,inactiveTrackColor: Colors.white,activeTrackColor: Colors.black26,activeColor: Colors.black,),
-                const SizedBox(width: 10,),
-                const Text("Dark",style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.normal)),
-              ],
-            ),
-            const SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.only(left: 60),
               child: ListTile(
@@ -103,7 +89,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
                 },
               ),
-            )
+            ),
+            const SizedBox(height: 20,),
           ],
         ),
       ),

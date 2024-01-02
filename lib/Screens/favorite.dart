@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../models/home_model.dart';
-import '../providers/favorite_provider.dart';
+import '../provider/favorite_provider.dart';
 import 'Home/item_details.dart';
 
 

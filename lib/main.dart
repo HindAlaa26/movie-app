@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/HomeLayout/home_layout.dart';
+import 'package:movie_app/Screens/Home/home_layout.dart';
 import 'package:movie_app/Screens/Home/Home.dart';
 import 'package:movie_app/Screens/login_screen.dart';
 import 'package:movie_app/Screens/onboarding_screen.dart';
 import 'package:movie_app/Screens/splash_screen.dart';
-import 'package:movie_app/providers/favorite_provider.dart';
+import 'package:movie_app/provider/favorite_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
