@@ -23,15 +23,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   var formKey = GlobalKey<FormState>();
 
-  String? email;
-
-  String? pass;
+  late List<String> emailAndPasswordList;
 
   void getData()async
   {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    email = prefs.getString("email");
-    pass = prefs.getString("password");
+    emailAndPasswordList = prefs.getStringList('emailAndPasswordList') ?? [];
+    print(emailAndPasswordList);
+  }
+  void setLoginState(bool isRegister)async
+  {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("isRegister",isRegister) ;
   }
 
   @override
@@ -93,17 +96,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: (){
                          setState(() {
                            getData();
+                           setLoginState(true);
                          });
                          if(formKey.currentState!.validate())
                          {
-                           setState(() {
-
-                             if(email == emailController.text && pass == passwordController.text)
-                             {
+                           for (String pair in emailAndPasswordList) {
+                             List<String> splitPair = pair.split(':');
+                             if (splitPair[0] == emailController.text && splitPair[1] == passwordController.text) {
                                Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeLayout(),));
+                               print("home page");
                              }
-                           });
-                           print("home page");
+                           }
                          }
                         },
                          minWidth: double.infinity,

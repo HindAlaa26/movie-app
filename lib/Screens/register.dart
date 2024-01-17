@@ -27,14 +27,25 @@ class _RegisterState extends State<Register> {
    bool isCheckboxFalse = false;
 
    var formKey = GlobalKey<FormState>();
-   void loginData(bool isRegister)async
+   void loginData(
+       {required bool isRegister,
+         required String email,
+         required String password}
+       )async
    {
      final SharedPreferences prefs = await SharedPreferences.getInstance();
+     // Get the existing list of email and password pairs from shared preferences
+     List<String> emailAndPasswordList = prefs.getStringList('emailAndPasswordList') ?? [];
+
+     // Add the new email and password pair to the list
+     emailAndPasswordList.add('$email:$password');
+
+     // Save the updated list back to shared preferences
+     await prefs.setStringList('emailAndPasswordList', emailAndPasswordList);
      await prefs.setString("name", nameController.text);
      await prefs.setString("phone", phoneController.text);
-     await prefs.setString("email", emailController.text);
-     await prefs.setString("password", passwordController.text);
      await prefs.setBool("isRegister", isRegister);
+     print(emailAndPasswordList);
    }
   @override
   Widget build(BuildContext context) {
@@ -163,10 +174,9 @@ class _RegisterState extends State<Register> {
                               if(formKey.currentState!.validate() && isCheckbox == true)
                               {
                                  setState(() {
-                                   loginData(true);
+                                   loginData(isRegister: true, email:emailController.text, password: passwordController.text);
                                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
                                  });
-                                  print("Login page");
                               }
                             },
                             minWidth: double.infinity,

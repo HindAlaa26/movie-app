@@ -20,13 +20,14 @@ class _HomeDrawerState extends State<HomeDrawer> {
     "top_rated",
     "upcoming"
   ];
-  void removeData()async
+  void setLoginState(bool isRegister)async
   {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     // to save email and pass
    // prefs.remove("isRegister");
     // to clear all
-     prefs.clear();
+      //prefs.clear();
+   await prefs.setBool("isRegister",isRegister) ;
   }
  bool isSwitch = true;
   @override
@@ -86,7 +87,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 leading: const Icon( Icons.logout_outlined,color: Colors.grey,size: 30),
                 title:  Text("Logout",style: TextStyle(color: Colors.grey,fontSize: 20.sp,fontWeight: FontWeight.normal)),
                 onTap: (){
-                  removeData();
+                 setLoginState(false);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
                 },
               ),
