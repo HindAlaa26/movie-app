@@ -8,32 +8,34 @@ class CustomScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 70),
-          child: Row(
-            children: [
-              IconButton(onPressed: (){
-                Navigator.pop(context);
-              },
-                  icon: const Icon(Icons.arrow_back,size: 30,)),
-               SizedBox(width: 25.w,),
-              Text(
-                title,
-                style:  TextStyle(
-                    color: Colors.grey,
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.normal,
-                    decoration: TextDecoration.none
+    return  Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 70),
+            child: Row(
+              children: [
+                IconButton(onPressed: (){
+                  Navigator.pop(context);
+                },
+                    icon:  Icon(Icons.arrow_back,size: 30,color: Theme.of(context).primaryColor)),
+                 SizedBox(width: 25.w,),
+                Text(
+                  title,
+                  style:  TextStyle(
+                      color: Colors.grey,
+                      fontSize: 28.sp,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.none
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        HomeBuilder(title: title,)
-      ],
+          HomeBuilder(title: title,)
+        ],
+      ),
     );
   }
 }

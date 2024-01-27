@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/login_screen.dart';
 
-import '../Shared component/page_indicator.dart';
+import '../Shared/shared_component/page_indicator.dart';
+
 
 class OnboardingScreen extends StatefulWidget {
    static String routeName = 'Onboarding';
@@ -41,7 +42,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             children: [
               Container(
-                color: Colors.black87,
+                color: Color.fromRGBO(29, 29, 29, 50),
                 child: Column(
                   children: [
                     Padding(
@@ -58,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Container(
-                color: Colors.black87,
+                color: Color.fromRGBO(29, 29, 29, 50),
                 child: Column(
                   children: [
                     Padding(
@@ -91,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Container(
-                color: Colors.black87,
+                color: Color.fromRGBO(29, 29, 29, 50),
                 child: Column(
                   children: [
                     Padding(
@@ -108,7 +109,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Container(
-                color: Colors.black87,
+                color: Color.fromRGBO(29, 29, 29, 50),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

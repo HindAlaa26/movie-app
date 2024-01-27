@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/Home/custom_scroll.dart';
+import 'package:provider/provider.dart';
+import '../../provider/theme_provider.dart';
 import 'home_builder.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var theme =  Provider.of<ThemeProvider>(context);
+
     return SingleChildScrollView(
       child:  Column(
         children: [
@@ -30,11 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
              itemBuilder: (context, int bigIndex) {
                return  Container(
                  margin: const EdgeInsets.all(20),
-                 padding: const EdgeInsets.all(10),
+                 padding: const EdgeInsets.only(
+                   left: 8,
+                   right: 8
+                 ),
                  decoration: BoxDecoration(
-                   color: Colors.grey[800],
+                   color: theme.isDarkMode? Colors.blueGrey[600]: Colors.grey[800],
                    boxShadow: const [
-                     BoxShadow(blurRadius: 3, color: Colors.white)
+                     BoxShadow(blurRadius: 2, color: Colors.white)
                    ],
                  ),
                  child: Column(
@@ -44,8 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                        children: [
                          Text(
                            categories[bigIndex],
-                           style:  TextStyle(
-                               color: Colors.white, fontSize: 23.sp),
+                           style:   Theme.of(context).textTheme.displayLarge,
                          ),
                          IconButton(
                            onPressed: () {
@@ -57,9 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                              );
                            },
-                           icon:  const Icon(
+                           icon:  Icon(
                              Icons.arrow_forward,
-                             color: Colors.orange,
                              size: 30,
                            ),
                          )

@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/models/home_model.dart';
 
 class FavoriteProvider extends ChangeNotifier{
-  List<HomeModel> _favoriteItems = [];
-  List<HomeModel> get favoriteItems => _favoriteItems;
+  List<HomeModel> favoriteItem = [];
+  List<HomeModel> get favoriteItems => favoriteItem;
 
   void addToFavorites(HomeModel item) {
-    _favoriteItems.add(item);
+    favoriteItem.add(item);
     notifyListeners();
   }
 
   void removeFromFavorites(HomeModel item) {
-    _favoriteItems.remove(item);
+    favoriteItem.remove(item);
     notifyListeners();
   }
   // void clearFromFavorites(HomeModel item) {
-  //   _favoriteItems.remove(item);
+  //   favoriteItem.remove(item);
   //   notifyListeners();
   // }
 }

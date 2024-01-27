@@ -4,7 +4,8 @@ import 'package:movie_app/Screens/login_screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../Shared component/customTextFormField.dart';
+import '../Shared/shared_component/customTextFormField.dart';
+
 
 
 class Register  extends StatefulWidget {
@@ -61,13 +62,26 @@ class _RegisterState extends State<Register> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Moive",style: Theme.of(context).textTheme.bodyMedium,),
-                    Text("Club",style: Theme.of(context).textTheme.bodySmall,),
+                    Text("Moive",style: TextStyle(
+                      fontSize: 30.sp,
+                      fontWeight: FontWeight.bold,
+                      wordSpacing: 4,
+                      color: Colors.white,
+                      fontFamily: 'MochiyPopOne',
+                    ),),
+                    Text("Club",style:  TextStyle(
+                      fontSize: 30.sp,
+                      fontWeight: FontWeight.bold,
+                      wordSpacing: 4,
+                      color: const Color.fromRGBO(255, 187, 59, 1),
+                      fontFamily: 'MochiyPopOne',
+                    ),),
                   ],
                 ),
               ),
                Text("Create Account",style: TextStyle(
                 fontSize: 18.sp,
+                   color: Colors.white
               ),),
                SizedBox(height: 18.h,),
                Text("Lets get started and create your\naccount",style: TextStyle(
