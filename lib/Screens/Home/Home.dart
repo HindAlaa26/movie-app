@@ -71,28 +71,29 @@ class _HomeScreenState extends State<HomeScreen> {
                        ],
                      ),
                      SizedBox(
-                       height: 560.h,
-                       width: double.infinity,
+                       height: 550.h,
+                       //width: double.infinity,
                        child: ListView.builder(
                          shrinkWrap: true,
                          scrollDirection: Axis.horizontal,
                          physics: const BouncingScrollPhysics(),
-                         itemBuilder: (context, index) => GestureDetector(
-                           onTap: () {
-                             Navigator.push(
-                               context,
-                               MaterialPageRoute(
-                                 builder: (context) =>
-                                     CustomScroll(title: categories[bigIndex]),
-                               ),
-                             );
-                           },
-                           child: Row(
-                             children: [
-                               HomeBuilder(title: categories[bigIndex]),
-                             ],
-                           ),
+                         itemBuilder: (context, index) => Row(
+                           children: [
+                             HomeBuilder(title: categories[bigIndex]),
+                           ],
                          ),
+                             // GestureDetector(
+                           // onTap: () {
+                             // Navigator.push(
+                             //   context,
+                             //   MaterialPageRoute(
+                             //     builder: (context) =>
+                             //         CustomScroll(title: categories[bigIndex]),
+                             //   ),
+                             // );
+                         //   },
+                         //   child:
+                         // ),
 
                          itemCount: 4,
                        ),
@@ -101,11 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
                  ),
                );
              },
-             separatorBuilder: (context, index) =>  SizedBox(height: 18.h),
+             separatorBuilder: (context, index) =>  SizedBox(height: 15.h),
              itemCount: 4),
 
            SizedBox(
-            height: 25.h,
+            height: 20.h,
           ),
         ],
       ),

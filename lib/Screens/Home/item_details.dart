@@ -25,6 +25,7 @@ class ItemDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var favoriteProvider = Provider.of<FavoriteProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -63,10 +64,9 @@ class ItemDetails extends StatelessWidget {
                     }
                   },
                 ),
-                Consumer<FavoriteProvider>(builder: (context, value, child) {
-                  return  GestureDetector(
+                 GestureDetector(
                     onTap: () {
-                      value.addToFavorites(HomeModel(title:title,
+                         favoriteProvider.addToFavorites(HomeModel(title:title,
                           overview: overview,
                           image:image,
                           releaseDate:releaseDate,
@@ -86,8 +86,8 @@ class ItemDetails extends StatelessWidget {
                         ),
                       ],
                     ),
-                  );
-                },)
+                  ),
+
               ],
             ),
 

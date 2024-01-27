@@ -17,8 +17,8 @@ class _HomeItemState extends State<HomeItem> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 600.h,
-      width: 1000.w,
+      height: 550.h,
+      width: 970.w,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
@@ -49,8 +49,8 @@ class _HomeItemState extends State<HomeItem> {
                   ),
                   margin: const EdgeInsets.all(20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       //image
                       ClipRRect(
