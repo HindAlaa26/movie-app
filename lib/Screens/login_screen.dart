@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/register.dart';
-import 'package:movie_app/Shared/local/shared_preferences.dart';
+import '../Shared/Network/local/shared_preferences.dart';
 import '../Shared/shared_component/customTextFormField.dart';
 import 'Home/home_layout.dart';
 

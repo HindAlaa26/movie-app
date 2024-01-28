@@ -10,7 +10,7 @@ import 'package:movie_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'Screens/favorite.dart';
 import 'Screens/register.dart';
-import 'Shared/local/shared_preferences.dart';
+import 'Shared/Network/local/shared_preferences.dart';
 
 
 void main() async {

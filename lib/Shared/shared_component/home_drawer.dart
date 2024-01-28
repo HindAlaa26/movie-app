@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/login_screen.dart';
-import 'package:movie_app/Shared/local/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import '../../Screens/Home/custom_scroll.dart';
 import '../../provider/theme_provider.dart';
+import '../Network/local/shared_preferences.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer({super.key});
