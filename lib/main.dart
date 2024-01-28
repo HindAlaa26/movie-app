@@ -8,18 +8,15 @@ import 'package:movie_app/Screens/splash_screen.dart';
 import 'package:movie_app/provider/favorite_provider.dart';
 import 'package:movie_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'Screens/favorite.dart';
 import 'Screens/register.dart';
-Future<bool> getRegisterData()async
-{
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  return prefs.getBool("isRegister")??false;
-}
+import 'Shared/local/shared_preferences.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  bool isLoggedIn = await getRegisterData();
+  await SharedPreferencesHelper.init();
+  bool isLoggedIn = await SharedPreferencesHelper.getRegisterState();
   bool isDark = await ThemeProvider.getIsDarkData() ;
 
   runApp(
@@ -95,7 +92,7 @@ class MyApp extends StatelessWidget {
                   //menu category name text
                   displayLarge: TextStyle(color: Colors.white,fontSize:23.sp,fontWeight: FontWeight.bold),
                   //logout text
-                  displayMedium: TextStyle(color: Colors.grey,fontSize: 25.sp,),
+                  displayMedium: TextStyle(color: Colors.grey,fontSize: 20.sp,),
                   //vote rate average and title
                   titleMedium: TextStyle(fontSize: 25.sp,decoration: TextDecoration.none,color: Colors.white,fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),
                   //movie Date
@@ -169,7 +166,7 @@ class MyApp extends StatelessWidget {
                   //menu category name text
                   displayLarge: TextStyle(color: Colors.grey[300],fontSize:23.sp,fontWeight: FontWeight.bold),
                   //logout text
-                  displayMedium: TextStyle(color: Colors.grey,fontSize: 25.sp,),
+                  displayMedium: TextStyle(color: Colors.grey,fontSize: 20.sp,),
                   //vote rate average and title in home
                   titleMedium: TextStyle(fontSize: 25.sp,decoration: TextDecoration.none,color: Colors.blueGrey[100],fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),
                   //movie Date in home and favorite
@@ -213,11 +210,12 @@ class MyApp extends StatelessWidget {
           initialRoute: isLoggedIn? HomeLayout.routeName: SplashScreen.routeName,
           routes: {
             SplashScreen.routeName : (_)=> const SplashScreen(),
-            OnboardingScreen.routeName : (_)=> OnboardingScreen(),
+            OnBoardingScreen.routeName : (_)=> OnBoardingScreen(),
             LoginScreen.routeName : (_)=> LoginScreen(),
             Register.routeName : (_)=> Register(),
             HomeScreen.routeName : (_)=>  HomeScreen(),
             HomeLayout.routeName : (_)=>  const HomeLayout(),
+            Favorite.routeName : (_)=>  const Favorite(),
           },
         );
 

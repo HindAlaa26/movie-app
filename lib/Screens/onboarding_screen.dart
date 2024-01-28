@@ -5,19 +5,19 @@ import 'package:movie_app/Screens/login_screen.dart';
 import '../Shared/shared_component/page_indicator.dart';
 
 
-class OnboardingScreen extends StatefulWidget {
+class OnBoardingScreen extends StatefulWidget {
    static String routeName = 'Onboarding';
-   OnboardingScreen({super.key});
+   OnBoardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  List<String> onboardingText = ["Welcome to Movie Club, let's start movie time",
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  List<String> OnBoardingText = ["Welcome to Movie Club, let's start movie time",
     "login to movie club", "choose a movie","watch movie"];
 
-  List<String> onboardingImage = ["assets/images/onboarding_screen/welcome_movie.png",
+  List<String> OnBoardingImage = ["assets/images/onboarding_screen/welcome_movie.png",
   "https://cdni.iconscout.com/illustration/premium/thumb/login-page-2578971-2147152.png",
   "assets/images/onboarding_screen/choose movie.png",
     "assets/images/onboarding_screen/watch movie.png"];
@@ -37,7 +37,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             onPageChanged: (value){
              setState(() {
                currentIndex = value;
-
              });
             },
             children: [
@@ -46,12 +45,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 150,bottom: 50),
-                      child: Image(image: AssetImage(onboardingImage[0])),
+                      padding: const EdgeInsets.only(top: 110,bottom: 50),
+                      child: Image(image: AssetImage(OnBoardingImage[0])),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text(onboardingText[0],
+                      child: Text(OnBoardingText[0],
                           style: Theme.of(context).textTheme.bodyLarge
                       ),
                     )
@@ -63,8 +62,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 100,bottom: 50),
-                      child: Image(image: NetworkImage(onboardingImage[1]),
+                      padding: const EdgeInsets.only(top: 60,bottom: 50),
+                      child: Image(image: NetworkImage(OnBoardingImage[1]),
                       errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
                       loadingBuilder: (context, child, loadingProgress){
                         if(loadingProgress == null)
@@ -84,7 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(30.0),
-                      child: Text(onboardingText[1],
+                      child: Text(OnBoardingText[1],
                           style: Theme.of(context).textTheme.bodyLarge
                       ),
                     )
@@ -96,12 +95,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 100,bottom: 50),
-                      child: Image(image: AssetImage(onboardingImage[2])),
+                      padding: const EdgeInsets.only(top: 70,bottom: 50),
+                      child: Image(image: AssetImage(OnBoardingImage[2])),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Text(onboardingText[2],
+                      padding: const EdgeInsets.only(
+                        right: 30,
+                        left: 30,
+                        top: 40
+                      ),
+                      child: Text(OnBoardingText[2],
                           style: Theme.of(context).textTheme.bodyLarge
                       ),
                     )
@@ -114,14 +117,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 100),
-                      child: Image(image: AssetImage(onboardingImage[3])),
+                      padding: const EdgeInsets.only(top: 40),
+                      child: Image(image: AssetImage(OnBoardingImage[3])),
                     ),
                    Padding(
-                     padding: const EdgeInsets.only(top: 150),
+                     padding: const EdgeInsets.only(top: 130),
                      child: Column(
                        children: [
-                         Text(onboardingText[3],
+                         Text(OnBoardingText[3],
                              style: Theme.of(context).textTheme.bodyLarge
                          ),
                           SizedBox(height: 50.h,),

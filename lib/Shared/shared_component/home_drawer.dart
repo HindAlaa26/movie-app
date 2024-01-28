@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/login_screen.dart';
+import 'package:movie_app/Shared/local/shared_preferences.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../Screens/Home/custom_scroll.dart';
 import '../../provider/theme_provider.dart';
 
@@ -15,17 +15,6 @@ class HomeDrawer extends StatefulWidget {
 
 class _HomeDrawerState extends State<HomeDrawer> {
   List<String> categories = ["now_playing", "popular", "top_rated", "upcoming"];
-  bool isSwitched = false;
-  void setLoginState(bool isRegister) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    // to save email and pass
-    // prefs.remove("isRegister");
-    // to clear all
-    //prefs.clear();
-    await prefs.setBool("isRegister", isRegister);
-  }
-
-  bool isSwitch = true;
   @override
   Widget build(BuildContext context) {
     var themeProvide = Provider.of<ThemeProvider>(context, listen: true);
@@ -116,7 +105,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 60),
+            padding: const EdgeInsets.only(left: 40,top: 5),
             child: ListTile(
               leading: const Icon(Icons.logout_outlined,
                   color: Colors.grey, size: 35),
@@ -125,7 +114,26 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 style: Theme.of(context).textTheme.displayMedium,
               ),
               onTap: () {
-                setLoginState(false);
+                SharedPreferencesHelper.setLoginState(false);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ));
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 40),
+            child: ListTile(
+              leading: const Icon(Icons.cleaning_services_rounded,
+                  color: Colors.grey, size: 35),
+              title: Text(
+                "Clear My Account",
+                style: Theme.of(context).textTheme.displayMedium,
+              ),
+              onTap: () {
+               SharedPreferencesHelper.clearAccount();
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -135,7 +143,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             ),
           ),
           SizedBox(
-            height: 18.h,
+            height: 10.h,
           ),
         ],
       ),

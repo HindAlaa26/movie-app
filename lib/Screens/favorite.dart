@@ -5,6 +5,7 @@ import '../provider/favorite_provider.dart';
 import 'Home/item_details.dart';
 
 class Favorite extends StatefulWidget {
+  static String routeName = 'Favorite screen';
   const Favorite({super.key});
 
   @override

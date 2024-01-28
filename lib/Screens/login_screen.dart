@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/Screens/register.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:movie_app/Shared/local/shared_preferences.dart';
 import '../Shared/shared_component/customTextFormField.dart';
 import 'Home/home_layout.dart';
 
@@ -19,24 +19,10 @@ class _LoginScreenState extends State<LoginScreen> {
   var passwordController = TextEditingController();
 
   bool isPassword = true;
-
   var formKey = GlobalKey<FormState>();
-
-  late List<String> emailAndPasswordList;
-
-  void getData()async
-  {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    emailAndPasswordList = prefs.getStringList('emailAndPasswordList') ?? [];
-    print(emailAndPasswordList);
-  }
-  void setLoginState(bool isRegister)async
-  {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("isRegister",isRegister) ;
-  }
-
-  @override
+   List<String>? emailAndPasswordList;
+   bool loadingButton = false;
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -104,17 +90,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 60,left: 70,right: 70),
-                      child: MaterialButton(
-                        onPressed: (){
-                         setState(() {
-                           getData();
-                           setLoginState(true);
-                         });
+                      child:loadingButton ? CircularProgressIndicator(color:Colors.orange,) : MaterialButton(
+                        onPressed: ()async{
+
+                           SharedPreferencesHelper.setLoginState(true);
+                           emailAndPasswordList = await SharedPreferencesHelper.getEmailAndPassword();
+
                          if(formKey.currentState!.validate())
                          {
-                           for (String pair in emailAndPasswordList) {
+                           for (String pair in emailAndPasswordList!) {
                              List<String> splitPair = pair.split(':');
                              if (splitPair[0] == emailController.text && splitPair[1] == passwordController.text) {
+                               setState(() {
+                                 loadingButton = true;
+                               });
                                Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeLayout(),));
                                print("home page");
                              }

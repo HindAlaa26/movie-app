@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
              SizedBox(height: 150.h,),
             TextButton(
               onPressed: (){
-                Navigator.pushNamed(context, OnboardingScreen.routeName);
+                Navigator.pushNamed(context, OnBoardingScreen.routeName);
               },
               child:   Text("Let's Start",
                   style: TextStyle(color: const Color.fromRGBO(255, 187, 59, 50),fontSize: 30.sp,
