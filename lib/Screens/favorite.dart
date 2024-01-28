@@ -13,7 +13,7 @@ class Favorite extends StatefulWidget {
 }
 
 class _FavoriteState extends State<Favorite> {
-  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     var favoriteProvider = Provider.of<FavoriteProvider>(context);
