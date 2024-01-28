@@ -5,12 +5,12 @@ import 'package:movie_app/Screens/Home/Home.dart';
 import 'package:movie_app/Screens/login_screen.dart';
 import 'package:movie_app/Screens/onboarding_screen.dart';
 import 'package:movie_app/Screens/splash_screen.dart';
+import 'package:movie_app/Shared/Network/local/shared_preferences.dart';
 import 'package:movie_app/provider/favorite_provider.dart';
 import 'package:movie_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'Screens/favorite.dart';
 import 'Screens/register.dart';
-import 'Shared/Network/local/shared_preferences.dart';
 
 
 void main() async {

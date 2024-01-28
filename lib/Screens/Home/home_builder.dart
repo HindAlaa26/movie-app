@@ -30,7 +30,6 @@ class _HomeBuilderState extends State<HomeBuilder> {
           if(snapshot.hasData)
             {
               return HomeItem(homeModels: snapshot.data!);
-              //return  const Text("data");
             }
           else if(snapshot.hasError)
             {

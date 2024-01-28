@@ -25,7 +25,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
               image: const NetworkImage(
                 "https://img.freepik.com/free-photo/3d-rat-watching-movie-cinema_23-2151024865.jpg?size=626&ext=jpg&ga=GA1.1.2114304355.1700854564&semt=sph",
               ),
-              height: 275.h,
+              height: 320.h,
               width: double.infinity,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) =>

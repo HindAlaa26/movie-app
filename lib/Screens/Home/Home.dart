@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var theme =  Provider.of<ThemeProvider>(context);
-
     return SingleChildScrollView(
       child:  Column(
         children: [
@@ -72,7 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
                      ),
                      SizedBox(
                        height: 550.h,
-                       //width: double.infinity,
                        child: ListView.builder(
                          shrinkWrap: true,
                          scrollDirection: Axis.horizontal,
@@ -82,19 +80,6 @@ class _HomeScreenState extends State<HomeScreen> {
                              HomeBuilder(title: categories[bigIndex]),
                            ],
                          ),
-                             // GestureDetector(
-                           // onTap: () {
-                             // Navigator.push(
-                             //   context,
-                             //   MaterialPageRoute(
-                             //     builder: (context) =>
-                             //         CustomScroll(title: categories[bigIndex]),
-                             //   ),
-                             // );
-                         //   },
-                         //   child:
-                         // ),
-
                          itemCount: 4,
                        ),
                      ),
