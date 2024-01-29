@@ -124,21 +124,16 @@ class _FavoriteState extends State<Favorite> {
                                 SizedBox(width: 10.w),
                                 Text(
                                     "${favoriteProvider.favoriteItem[index].voteAverage}" ,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium),
+                                    style: Theme.of(context).textTheme.titleMedium),
                               ],
                             ),
                             SizedBox(height: 10.h),
                             Text(
-                                favoriteProvider.favoriteItem[index].title ??
-                                    "movie name",
+                                favoriteProvider.favoriteItem[index].title,
                                 style: Theme.of(context).textTheme.titleMedium),
                             SizedBox(height: 8.h),
                             Text(
-                                favoriteProvider
-                                        .favoriteItem[index].releaseDate ??
-                                    "movie Date",
+                                favoriteProvider.favoriteItem[index].releaseDate ,
                                 style: Theme.of(context).textTheme.labelMedium),
                           ],
                         ),
