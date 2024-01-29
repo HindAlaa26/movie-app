@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app/models/home_model.dart';
-import 'package:movie_app/movie_service/movie_service.dart';
-
+import '../../Shared/Network/remote/movie_service/movie_service.dart';
 import '../../Shared/shared_component/home_item.dart';
 
 class HomeBuilder extends StatefulWidget {

@@ -5,12 +5,12 @@ import '../../models/home_model.dart';
 import '../../provider/favorite_provider.dart';
 
 class ItemDetails extends StatelessWidget {
-  final String? title;
-  final String? overview;
-  final String? image;
-  final String? posterPath;
-  final String? releaseDate;
-  final double? voteAverage;
+  final String title;
+  final String overview;
+  final String image;
+  final String posterPath;
+  final String releaseDate;
+  final double voteAverage;
    bool? isFavorite;
 
   ItemDetails(

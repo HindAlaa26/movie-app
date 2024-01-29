@@ -1,11 +1,11 @@
 class HomeModel
 {
-  final String? title;
-  final String? overview;
-  final String? image;
-  final String? posterPath;
-  final String? releaseDate;
-  final double? voteAverage;
+  final String title;
+  final String overview;
+  final String image;
+  final String posterPath;
+  final String releaseDate;
+  final double voteAverage;
 
   HomeModel({required this.title, required this.overview, required this.image,required this.releaseDate
   , required this.voteAverage,
