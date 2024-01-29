@@ -13,7 +13,7 @@ class SharedPreferencesHelper
   static Future<List<String>> getEmailAndPassword()async
   {
    return  emailAndPasswordList = await prefs?.getStringList('emailAndPasswordList') ?? [];
-    print(emailAndPasswordList);
+   // print(emailAndPasswordList);
   }
   // set login Screen in login
   static Future<bool?> setLoginState(bool isRegister)async
@@ -33,7 +33,7 @@ class SharedPreferencesHelper
 }
   // login Data in register screen
   static Future<dynamic> loginData(
-      {required bool isRegister,
+      {
         required String email,
         required String password,
         required String nameController,
@@ -51,7 +51,6 @@ class SharedPreferencesHelper
     await prefs?.setStringList('emailAndPasswordList', emailAndPasswordList);
     await prefs?.setString("name", nameController);
     await prefs?.setString("phone", phoneController);
-    await prefs?.setBool("isRegister", isRegister);
     print(emailAndPasswordList);
   }
 }
