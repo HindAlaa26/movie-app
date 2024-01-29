@@ -49,8 +49,6 @@ class _HomeItemState extends State<HomeItem> {
                   ),
                   margin: const EdgeInsets.all(20),
                   child: Column(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       //image
                       ClipRRect(
@@ -88,10 +86,10 @@ class _HomeItemState extends State<HomeItem> {
                             ],
                           ),
                            SizedBox(height: 10.h),
-                          Text(widget.homeModels[index].title ?? "movie name", style:Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,
+                          Text(widget.homeModels[index].title , style:Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,
                           maxLines: 1,),
                            SizedBox(height: 10.h),
-                          Text(widget.homeModels[index].releaseDate ?? "movie Date", style: Theme.of(context).textTheme.labelMedium),
+                          Text(widget.homeModels[index].releaseDate , style: Theme.of(context).textTheme.labelMedium),
                         ],
                       ),
                     ],
