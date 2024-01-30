@@ -80,7 +80,6 @@ class _HomeScreenState extends State<HomeScreen> {
                              HomeBuilder(title: categories[bigIndex]),
                            ],
                          ),
-                         itemCount: 4,
                        ),
                      ),
                    ],
